@@ -27,6 +27,11 @@ Start and run each app using its own README:
 1. Backend setup/run: `server/README.md`
 2. Frontend setup/run: `web/README.md`
 
+Default local URLs:
+
+- `server` (Nest API): `http://localhost:3000`
+- `web` (Vite dev server): `http://localhost:5173`
+
 ## Quick start (one command)
 
 From repository root:

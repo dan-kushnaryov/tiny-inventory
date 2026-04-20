@@ -29,6 +29,10 @@
    - **`VITE_PROXY_API`** — Nest base URL for the dev proxy (match `PORT` in `server/.env`).
    - **`VITE_API_URL`** — Base URL for `fetch()`. Set **`http://localhost:3000`** (or your Nest URL) so requests go **directly** to the API (what you see in Network). Use **empty** (`VITE_API_URL=`) if you want same-origin URLs to the Vite port and rely on the **proxy** (`VITE_PROXY_API`) — then Network shows `:5173`, not `:3000`.
 
+## Default local URL
+
+- Web app (`web`): `http://localhost:5173`
+
 ## Docker note
 
 Web app can run standalone in Docker (`Vite build -> nginx`) via:

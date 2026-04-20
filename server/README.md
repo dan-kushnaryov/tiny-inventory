@@ -25,6 +25,12 @@ NestJS (TypeScript) REST service for **stores** and **products**, backed by **Po
 
 ---
 
+## Default local URL
+
+- API (`server`): `http://localhost:3000`
+
+---
+
 ## Install dependencies
 
 ```bash
