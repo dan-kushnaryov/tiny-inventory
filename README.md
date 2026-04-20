@@ -31,14 +31,23 @@ Start and run each app using its own README:
 
 From repository root:
 
+**Recommended reviewer command (full stack + fixtures):**
+
 ```bash
-# Start full stack (creates missing .env files from .env.example)
+./scripts/dev-up.sh --with-fixtures
+```
+
+```bash
+# Start full stack without fixtures (creates missing .env files from .env.example)
 ./scripts/dev-up.sh
 
-# Same, plus fixture load
+# Same, with fixtures
 ./scripts/dev-up.sh --with-fixtures
+```
 
-# Alternative (plain docker compose):
+Manual alternative (plain Docker Compose, full stack + fixtures):
+
+```bash
 docker compose up --build -d && docker compose --profile fixtures run --rm fixtures
 ```
 
