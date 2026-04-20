@@ -1,2 +1,5 @@
 # Tooling / OS
 .DS_Store
+
+# Local env
+.env
