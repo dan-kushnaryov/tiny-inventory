@@ -1,5 +1,8 @@
 # Tooling / OS
 .DS_Store
 
+# Dependencies / caches
+node_modules/
+
 # Local env
 .env
