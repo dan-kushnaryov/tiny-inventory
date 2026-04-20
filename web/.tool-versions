@@ -1,0 +1,2 @@
+# npm 10.9.7 ships with Node 22.22.2 (see package.json engines + Dockerfile).
+nodejs 22.22.2

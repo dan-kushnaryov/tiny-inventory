@@ -1,0 +1,17 @@
+# Full stack: backend (`server/docker-compose.yml`) + web (`web/docker-compose.yml`).
+#
+# Run from repository root:
+#   docker compose up --build -d
+# This starts: postgres + app + web.
+#
+# Optional fixtures (off by default):
+#   docker compose --profile fixtures run --rm fixtures
+#
+# Optional env for Compose variable substitution (ports, VITE_API_URL, etc.):
+#   copy `.env.example` -> `.env` and adjust values.
+
+name: knostic
+
+include:
+  - server/docker-compose.yml
+  - web/docker-compose.yml

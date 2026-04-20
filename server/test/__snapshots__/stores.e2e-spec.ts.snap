@@ -1,0 +1,148 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Stores API (e2e) > DELETE /stores/:id returns 204 then GET 404 1`] = `
+{
+  "code": "STORE_NOT_FOUND",
+  "error": "Not Found",
+  "message": "Store with id "<uuid>" not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores returns empty paginated list 1`] = `
+{
+  "items": [],
+  "meta": {
+    "limit": 20,
+    "page": 1,
+    "total": 0,
+    "totalPages": 0,
+  },
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores supports pagination 1`] = `
+{
+  "items": [
+    {
+      "address": null,
+      "createdAt": "<iso-date>",
+      "id": "<uuid>",
+      "name": "Store A",
+      "updatedAt": "<iso-date>",
+    },
+  ],
+  "meta": {
+    "limit": 1,
+    "page": 1,
+    "total": 2,
+    "totalPages": 2,
+  },
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores/:id rejects non-uuid param 1`] = `
+{
+  "error": "Bad Request",
+  "message": "Validation failed (uuid is expected)",
+  "statusCode": 400,
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores/:id returns 404 for unknown id 1`] = `
+{
+  "code": "STORE_NOT_FOUND",
+  "error": "Not Found",
+  "message": "Store with id "<uuid>" not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores/:id/stats for empty store 1`] = `
+{
+  "categoryDistribution": [],
+  "stockStatus": {
+    "lowStockPercent": 0,
+    "lowStockThreshold": 5,
+    "productsBelowThreshold": 0,
+    "totalProducts": 0,
+  },
+  "storeId": "<uuid>",
+  "totalInventoryValue": 0,
+}
+`;
+
+exports[`Stores API (e2e) > GET /stores/:id/stats with products and categories 1`] = `
+{
+  "categoryDistribution": [
+    {
+      "category": "Electronics",
+      "percentOfProducts": 50,
+      "productCount": 1,
+    },
+    {
+      "category": "Food",
+      "percentOfProducts": 50,
+      "productCount": 1,
+    },
+  ],
+  "stockStatus": {
+    "lowStockPercent": 50,
+    "lowStockThreshold": 5,
+    "productsBelowThreshold": 1,
+    "totalProducts": 2,
+  },
+  "storeId": "<uuid>",
+  "totalInventoryValue": 75,
+}
+`;
+
+exports[`Stores API (e2e) > PATCH /stores/:id no-op when body empty 1`] = `
+{
+  "address": null,
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "Stable",
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Stores API (e2e) > PATCH /stores/:id updates fields 1`] = `
+{
+  "address": null,
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "New Name",
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Stores API (e2e) > POST /stores creates a store 1`] = `
+{
+  "address": "1 Test Lane",
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "North Warehouse",
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Stores API (e2e) > POST /stores rejects invalid body 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "name should not be empty",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`Stores API (e2e) > POST /stores rejects unknown properties 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "property extraField should not exist",
+  ],
+  "statusCode": 400,
+}
+`;

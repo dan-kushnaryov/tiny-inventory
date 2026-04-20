@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Tests & coverage
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# Local env (never commit secrets)
+.env
+.env.local
+.env.*.local
+.env.test
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store

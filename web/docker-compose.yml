@@ -1,0 +1,18 @@
+# Standalone static web image (Vite build -> nginx) that can point to an external API.
+#
+# Example:
+#   docker compose up --build web
+#
+# If you keep VITE_API_URL empty, browser requests stay same-origin to this web host.
+# For host API (outside Docker), set a full URL (e.g. http://localhost:3000).
+# When run from `web/`, Compose reads `web/.env` automatically.
+services:
+  web:
+    container_name: knostic-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:?Set VITE_API_URL for web build (e.g. http://localhost:3000)}
+    ports:
+      - '${KNOSTIC_WEB_PORT:-5173}:80'

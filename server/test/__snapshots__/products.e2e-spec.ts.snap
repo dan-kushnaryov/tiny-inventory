@@ -1,0 +1,212 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Products API (e2e) > DELETE /products/:id returns 204 then GET 404 1`] = `
+{
+  "code": "PRODUCT_NOT_FOUND",
+  "error": "Not Found",
+  "message": "Product with id "<uuid>" not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Products API (e2e) > GET /products filters by price and stock range 1`] = `
+{
+  "items": [
+    {
+      "category": "G",
+      "categoryId": "<uuid>",
+      "createdAt": "<iso-date>",
+      "id": "<uuid>",
+      "name": "Cheap",
+      "price": 1,
+      "quantityInStock": 1,
+      "storeId": "<uuid>",
+      "updatedAt": "<iso-date>",
+    },
+  ],
+  "meta": {
+    "limit": 20,
+    "page": 1,
+    "total": 1,
+    "totalPages": 1,
+  },
+}
+`;
+
+exports[`Products API (e2e) > GET /products filters by storeId and categoryId 1`] = `
+{
+  "items": [
+    {
+      "category": "Produce",
+      "categoryId": "<uuid>",
+      "createdAt": "<iso-date>",
+      "id": "<uuid>",
+      "name": "Apple",
+      "price": 2,
+      "quantityInStock": 5,
+      "storeId": "<uuid>",
+      "updatedAt": "<iso-date>",
+    },
+  ],
+  "meta": {
+    "limit": 20,
+    "page": 1,
+    "total": 1,
+    "totalPages": 1,
+  },
+}
+`;
+
+exports[`Products API (e2e) > GET /products include=store embeds store 1`] = `
+{
+  "items": [
+    {
+      "category": "Z",
+      "categoryId": "<uuid>",
+      "createdAt": "<iso-date>",
+      "id": "<uuid>",
+      "name": "With Store",
+      "price": 2,
+      "quantityInStock": 3,
+      "store": {
+        "address": null,
+        "createdAt": "<iso-date>",
+        "id": "<uuid>",
+        "name": "Embed Store",
+        "updatedAt": "<iso-date>",
+      },
+      "updatedAt": "<iso-date>",
+    },
+  ],
+  "meta": {
+    "limit": 20,
+    "page": 1,
+    "total": 1,
+    "totalPages": 1,
+  },
+}
+`;
+
+exports[`Products API (e2e) > GET /products lists with pagination meta 1`] = `
+{
+  "items": [
+    {
+      "category": "C1",
+      "categoryId": "<uuid>",
+      "createdAt": "<iso-date>",
+      "id": "<uuid>",
+      "name": "P1",
+      "price": 1,
+      "quantityInStock": 1,
+      "storeId": "<uuid>",
+      "updatedAt": "<iso-date>",
+    },
+  ],
+  "meta": {
+    "limit": 10,
+    "page": 1,
+    "total": 1,
+    "totalPages": 1,
+  },
+}
+`;
+
+exports[`Products API (e2e) > GET /products rejects invalid include 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "include must be empty or a comma-separated list of allowed relation names: store (alias: stores). Unknown values are not allowed.",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`Products API (e2e) > GET /products rejects invalid price range 1`] = `
+{
+  "error": "Bad Request",
+  "message": "price: upper bound must be greater than or equal to lower bound",
+  "statusCode": 400,
+}
+`;
+
+exports[`Products API (e2e) > GET /products/:id returns 404 1`] = `
+{
+  "code": "PRODUCT_NOT_FOUND",
+  "error": "Not Found",
+  "message": "Product with id "<uuid>" not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Products API (e2e) > GET /products/:id with include=store 1`] = `
+{
+  "category": "Z",
+  "categoryId": "<uuid>",
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "Detail",
+  "price": 4,
+  "quantityInStock": 7,
+  "store": {
+    "address": null,
+    "createdAt": "<iso-date>",
+    "id": "<uuid>",
+    "name": "Detail Store",
+    "updatedAt": "<iso-date>",
+  },
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Products API (e2e) > PATCH /products/:id updates product 1`] = `
+{
+  "category": "Cat",
+  "categoryId": "<uuid>",
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "After",
+  "price": 12.5,
+  "quantityInStock": 2,
+  "storeId": "<uuid>",
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Products API (e2e) > POST /products creates product 1`] = `
+{
+  "category": "Dairy",
+  "categoryId": "<uuid>",
+  "createdAt": "<iso-date>",
+  "id": "<uuid>",
+  "name": "Milk",
+  "price": 3.49,
+  "quantityInStock": 12,
+  "storeId": "<uuid>",
+  "updatedAt": "<iso-date>",
+}
+`;
+
+exports[`Products API (e2e) > POST /products rejects invalid payload 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "price must not be less than 0",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`Products API (e2e) > POST /products returns 404 when store does not exist 1`] = `
+{
+  "code": "STORE_NOT_FOUND",
+  "error": "Not Found",
+  "message": "Store with id "<uuid>" not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Products API (e2e) > sanitizer replaces UUIDs inside error messages 1`] = `
+{
+  "message": "Store with id "<uuid>" not found",
+}
+`;
