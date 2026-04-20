@@ -43,7 +43,7 @@ function renderPage() {
 }
 
 describe('ProductDetailPage', () => {
-  it('sanitizes price and stock to integer-only values', async () => {
+  it('keeps decimal price input and integer-only stock input', async () => {
     vi.mocked(fetchProduct).mockResolvedValueOnce({
       id: 'product-1',
       name: 'MacBook',
@@ -81,10 +81,10 @@ describe('ProductDetailPage', () => {
     const priceInput = (await screen.findByLabelText('Price')) as HTMLInputElement;
     const stockInput = (await screen.findByLabelText('Stock')) as HTMLInputElement;
 
-    fireEvent.change(priceInput, { target: { value: '--12.30++' } });
+    fireEvent.change(priceInput, { target: { value: '--12,30++' } });
     fireEvent.change(stockInput, { target: { value: '9e2' } });
 
-    expect(priceInput).toHaveValue('1230');
+    expect(priceInput).toHaveValue('12.30');
     expect(stockInput).toHaveValue('92');
   });
 });

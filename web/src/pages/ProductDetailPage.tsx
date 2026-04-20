@@ -12,6 +12,7 @@ import {
   parsedStock,
   priceInputError,
   productNameLengthError,
+  sanitizePriceDraft,
   sanitizeStockDraft,
   stockInputError,
 } from '../utils/productFieldErrors';
@@ -212,9 +213,9 @@ export function ProductDetailPage() {
                 <input
                   id="p-price"
                   type="text"
-                  inputMode="numeric"
+                  inputMode="decimal"
                   value={price}
-                  onChange={(e) => setPrice(sanitizeStockDraft(e.target.value))}
+                  onChange={(e) => setPrice(sanitizePriceDraft(e.target.value))}
                   aria-invalid={Boolean(priceErr || priceReqErr)}
                 />
               </FieldValidationTooltip>

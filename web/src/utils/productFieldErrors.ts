@@ -35,7 +35,7 @@ const STOCK_DRAFT_MAX_CHARS = 12;
 
 /** Allow only digits and one dot; cap length while typing (API still validates). */
 export function sanitizePriceDraft(raw: string): string {
-  let s = raw.replace(/[^\d.]/g, '');
+  let s = raw.replace(/[^\d.,]/g, '').replace(/,/g, '.');
   const i = s.indexOf('.');
   if (i !== -1) {
     s =
